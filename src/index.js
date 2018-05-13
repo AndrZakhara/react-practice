@@ -10,8 +10,8 @@ import Userinfo from './component/Userinfo';
 
 const layoutMain = (
     <div className="l-main">
-        <Sidebar clients = {clients} />
-        <Userinfo clients = {clients} />
+        <Sidebar clients = {clients[0]} />
+        <Userinfo clients = {clients[0]} />
         {console.log(clients)}
     </div>
 );

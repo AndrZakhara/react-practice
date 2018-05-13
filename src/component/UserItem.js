@@ -3,18 +3,23 @@ import "./UserItem.css";
 
 export default function Sidebar(props) {
     const clients = props.clients;
+    const link = "#" + clients.general.firstName + clients.general.lastName ;
+    const avatar = clients.general.avatar;
+    const jobCompany = clients.job.company;
+    const position = clients.job.title;
 
-    // for (let i = 0; i < .length; i++) {
-    //
-    // }
     return (
-        <div className = "l-wrapper">
             <div className="c-user-item">
-                <a href = {"#" + clients[0].general.lastName}>{clients[0].general.firstName + ' ' + clients[0].general.lastName}</a>
-                <a href = {"#" + clients[1].general.lastName}>{clients[1].general.firstName + ' ' + clients[1].general.lastName}</a>
-                <a href = {"#" + clients[2].general.lastName}>{clients[2].general.firstName + ' ' + clients[2].general.lastName}</a>
-                <a href = {"#" + clients[3].general.lastName}>{clients[3].general.firstName + ' ' + clients[3].general.lastName}</a>
+                <a href = {link}>
+                    <div className="c-user-item__avatar">
+                        <img src={avatar} alt=""/>
+                    </div>
+                    <div className="c-user-item__info">
+                        <h4 className="c-user-item__header">{clients.general.firstName + ' ' + clients.general.lastName}</h4>
+                        <p>Company: {jobCompany}</p>
+                        <p>Position: {position}</p>
+                    </div>
+                </a>
             </div>
-        </div>
     )
 }
