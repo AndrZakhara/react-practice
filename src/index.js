@@ -1,12 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+// import React from 'react';
+import ReactDOM from 'react-dom';
+import Sidebar from './component/Sidebar';
 
-const element = (
-    <h3>Hi</h3>
-);
-
-
+const sidebar = Sidebar();
 ReactDOM.render(
-    element,
+    sidebar,
     document.getElementById('app')
 );
