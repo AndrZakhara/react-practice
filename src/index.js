@@ -1,9 +1,23 @@
-// import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Sidebar from './component/Sidebar';
+import './normolize.css';
+import './index.css';
+import clients from './clients.json';
 
-const sidebar = Sidebar();
+import Sidebar from './component/UserItem';
+import Userinfo from './component/Userinfo';
+
+
+const layoutMain = (
+    <div className="l-main">
+        <Sidebar clients = {clients} />
+        <Userinfo clients = {clients} />
+        {console.log(clients)}
+    </div>
+);
+
+
 ReactDOM.render(
-    sidebar,
+    layoutMain,
     document.getElementById('app')
 );

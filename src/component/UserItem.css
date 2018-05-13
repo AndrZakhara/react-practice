@@ -1,4 +1,4 @@
-.sidenav {
+.c-user-item {
     height: 100%;
     width: 260px;
     position: fixed;
@@ -11,7 +11,7 @@
     border-right: 1px solid lightgray;
 }
 
-.sidenav a {
+.c-user-item a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
@@ -19,7 +19,7 @@
     display: block;
 }
 
-.sidenav a:hover {
+.c-user-item a:hover {
     color: #f1f1f1;
 }
 
