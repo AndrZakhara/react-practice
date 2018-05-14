@@ -7,7 +7,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
 
+.c-search__icon {
+    opacity: 0.9;
+    color: white;
 }
 
 .c-search__input {
@@ -17,10 +21,11 @@
     text-align: left;
     text-decoration: none;
     outline: none;
+    width: 100%;
 }
 
 .c-search__button {
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     border: none;
     cursor: pointer;

@@ -9,7 +9,7 @@ export default function Search() {
             <form className="c-search__form"action="">
                 <input className="c-search__input"type="text" placeholder="Seach..."/>
                 <button className="c-search__button"type="submit">
-                    <i className="fas fa-search"></i>
+                    <i className="c-search__icon fas fa-search"></i>
                 </button>
             </form>
         </div>
