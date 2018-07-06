@@ -1,10 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import AddColorForm from './components/AddColorForm'
+
 import './index.css';
 
 
 
-render(
-    <h1>color rating app</h1>
+ReactDOM.render(
+    <AddColorForm />
     , document.getElementById('root'));
 
