@@ -1,16 +1,21 @@
-import React from 'react'
-import { component } from 'react'
+import React from 'react';
+import { component } from 'react';
+import '../styles/AddColorForm.css'
 
  const AddColorForm = () => (
 
-    <div>
-        <form onSubmit={e => e.preventDefault()}>
-            <input type="text"
-                placeholder="color title..." required/>
+    <header className="l-color-form">
+        <form className="c-color-form" onSubmit={e => e.preventDefault()}>
+            <input
+                className="c-color-form__text-input"
+                type="text"
+                placeholder="color title..."
+                required
+            />
             <input type="color"/>
-            <button>Add color</button>
+            <input type="button" value="Add color"/>
         </form>
-    </div>
+    </header>
 
 );
 
