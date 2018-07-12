@@ -12,7 +12,7 @@ import '../styles/AddColorForm.css'
                 placeholder="color title..."
                 required
             />
-            <input type="color"/>
+            <input type="color" value="#7289da"/>
             <input type="button" value="Add color"/>
         </form>
     </header>
