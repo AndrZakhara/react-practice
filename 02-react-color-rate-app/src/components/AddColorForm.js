@@ -4,15 +4,18 @@ import '../styles/AddColorForm.css'
 
 export default class AddColorForm extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.submit = this.submit.bind(this)
     }
+
+    getTitleInputRef = (node) => {this._title = node};
+
     submit(e) {
-        const { _title, _color } = this.refs
-        console.log(_title)
-        console.log(_color)
+        const { _title, _color }= this.refs;
+        console.log(_title);
+        console.log(_color.value);
         e.preventDefault();
-        alert(`New color: ${_title.value}: ${_color.value}`)
+        alert(`New color: ${_title.value}: ${_color.value}`);
         _title.value = '';
         _color.value = '#000000';
         _title.focus();
