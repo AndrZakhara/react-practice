@@ -36,10 +36,10 @@ input[type=text] {
     color: rgb(87, 87, 87);
     padding: 0 10px;
 }
-input[type=button]:hover {
+input[type=submit]:hover {
     background-color: #9f9f9f;
 }
-input[type=button] {
+input[type=submit] {
     padding: 0 20px;
     color: white;
     background-color: #6c6c6c;
