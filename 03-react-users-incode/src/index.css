@@ -8,9 +8,7 @@ body {
 .c_user-info {
     display: flex;
 }
-
 .c_user-info__user-item-list {
-    background-color: #d9d9d9;
     width: 280px;
     height: 100vh;
 }
@@ -36,5 +34,32 @@ body {
 }
 .c_user-info__user-search input[type="submit"]:hover {
     background-color: #818181;
+}
+.c_user-info__user-item {
+    border-bottom: 1px solid white;
+    background-color: #d9d9d9;
+}
+.c_user-info__user-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.c_user-info__user-item img{
+    width:50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 0 10px;
+}
+.c_user-info__user-item p{
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    padding-left: 4px;
+}
+.c_user-info__user-item span h3{
+    color: #616161;
+    margin-left: 20px;
+    padding: 4px 20px;
+    margin: 0;
 }
 

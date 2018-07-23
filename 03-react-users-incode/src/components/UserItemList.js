@@ -8,7 +8,7 @@ function UserItemList(props) {
     return (
         <div className="c_user-info__user-item-list">
             <UserSearch />
-            {userList.map((userInfo, i) => <UserItem userInfo={userInfo} key={i}/>)}
+            {userList.map((userInfo, i) => <UserItem userInfo={userInfo} key={userInfo.id}/>)}
         </div>
     )
 
