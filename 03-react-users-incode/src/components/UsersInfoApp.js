@@ -6,7 +6,7 @@ import SelectedUserInfo from './SelectedUserInfo'
 export default class UsersInfoApp extends Component {
     render() {
         return (
-            <div>
+            <div className="c_user-info">
                 <UserItemList />
                 <SelectedUserInfo />
             </div>

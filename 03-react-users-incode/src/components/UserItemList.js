@@ -6,7 +6,7 @@ import UserItem from './UserItem';
 export default class UserItemList extends Component {
     render() {
         return (
-            <div>
+            <div className="c_user-info__user-item-list">
                 <UserSearch />
                 <UserItem />
             </div>
