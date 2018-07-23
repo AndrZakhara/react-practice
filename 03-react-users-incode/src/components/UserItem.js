@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserItem() {
+function UserItem(props) {
     return(
         <div>
             UserItem
