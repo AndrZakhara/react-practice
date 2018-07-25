@@ -42,8 +42,11 @@ body {
     flex-direction: row;
     align-items: center;
 }
+.c_user-info__user-item--selected {
+    background-color: #f5f5f5;
+}
 .c_user-info__user-item:hover {
-    background-color: #e6e6e6;
+    background-color: #f5f5f5;
     cursor: pointer;
 }
 .c_user-info__user-item--selected-gray {
