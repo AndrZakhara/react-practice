@@ -1,17 +1,17 @@
 import React from 'react';
+import {Component} from 'react';
 import UserSearch from './UserSearch';
 import UserItem from './UserItem';
 
-function UserItemList(props) {
-    const { userList } = props;
+export default class UserItemList extends Component {
 
-    return (
-        <div className="c_user-info__user-item-list">
-            <UserSearch />
-            {userList.map((userInfo, i) => <UserItem userInfo={userInfo} key={userInfo.id}/>)}
-        </div>
-    )
-
+    render() {
+        return (
+            <div className="c_user-info__user-item-list">
+                <UserSearch />
+                {this.props.userList.map((userInfo) => <UserItem userInfo={userInfo} key={userInfo.id}/>)}
+            </div>
+        )
+    }
 }
 
-export default UserItemList
