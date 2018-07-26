@@ -69,4 +69,23 @@ body {
     padding: 4px 30px;
     margin: 0;
 }
+.c_selected-user {
+    box-sizing: border-box;
+    margin: 20px;
+}
+.c_selected-user__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.c_selected-user__header-avatar {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin: 0 20px;
+}
+.c_selected-user__header-contacts--text-sm {
+    font-size: smaller;
+    margin: 5px 0;
+}
 

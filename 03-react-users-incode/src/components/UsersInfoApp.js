@@ -18,12 +18,17 @@ export default class UsersInfoApp extends Component {
     };
 
     updateSelected = (value) => {
-        this.setState({ selected: value })
+        this.setState({ selected: value });
+    };
+
+    selectedUserData (userList, selectedUserId) {
+        const  {...selectedUser} = userList.filter((obj) => obj.id === selectedUserId);
+
+        return selectedUser[0];
     };
 
     render() {
-        console.log(this.state.selected);
-        console.log(this.state.userList);
+
         return (
             <div className="c_user-info">
                 <UserItemList
@@ -32,7 +37,9 @@ export default class UsersInfoApp extends Component {
                     // setSelected = {this.setSelected}
                     updateSelected = {this.updateSelected}
                 />
-                <SelectedUserInfo />
+                <SelectedUserInfo
+                    selectedUserData = {this.selectedUserData(this.state.userList, this.state.selected)}
+                />
             </div>
         )
     }

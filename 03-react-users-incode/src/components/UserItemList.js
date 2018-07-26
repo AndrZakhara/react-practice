@@ -10,7 +10,7 @@ export default class UserItemList extends Component {
     };
 
     render() {
-        console.log(this.props);
+
         return (
             <div className="c_user-info__user-item-list">
                 <UserSearch />
