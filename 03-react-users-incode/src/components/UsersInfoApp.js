@@ -13,13 +13,25 @@ const dataWithId = Data.map((obj) => {
 
 export default class UsersInfoApp extends Component {
     state = {
-        userList: dataWithId
+        userList: dataWithId,
+        selected: dataWithId[0].id
+    };
+
+    updateSelected = (value) => {
+        this.setState({ selected: value })
     };
 
     render() {
+        console.log(this.state.selected);
+        console.log(this.state.userList);
         return (
             <div className="c_user-info">
-                <UserItemList userList = {dataWithId} />
+                <UserItemList
+                    userList = {this.state.userList}
+                    selected = {this.state.selected}
+                    // setSelected = {this.setSelected}
+                    updateSelected = {this.updateSelected}
+                />
                 <SelectedUserInfo />
             </div>
         )
