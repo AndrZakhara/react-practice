@@ -20,6 +20,7 @@ export default class UsersInfoApp extends Component {
 
     state = {
         userList: dataWithId,
+        userListFiltered: dataWithId,
         selected: dataWithId[0].id,
         search: ''
     };
@@ -35,27 +36,60 @@ export default class UsersInfoApp extends Component {
     };
 
 
-    handleChangeUserSearch(evt) {
+    handleChangeUserSearch(e) {
 
         let changeInputPromise = new Promise((resolve) => {
-            resolve(this.setState({search: evt.target.value}));
+            resolve(e.target.value);
         });
 
-        changeInputPromise.then(()=>{
-            this.searchForm();
+        changeInputPromise.then((value)=>{
+            this.filterUserList(value)
         });
     };
 
-    searchForm() {
-        console.log(this.state.search);
+    filterUserList(value) {
+        function sortObject(obj) {
+            let boolean = false;
+
+            function sort(obj) {
+                for(let key in obj) {
+
+                    if (typeof (obj[key]) === 'object') {
+                        sort(obj[key]);
+
+                    } else {
+
+                        if((obj[key]).toLowerCase().indexOf(value.toLowerCase()) !== -1) {
+                            boolean = true;
+                        }
+                    }
+                }
+                return boolean;
+            }
+            sort(obj);
+
+            return boolean;
+        }
+        const userList = this.state.userList.filter((obj => {
+
+            return sortObject(obj);
+
+        }));
+
+        console.log(userList);
+
+        this.setState({ selected: userList[0].id });
+        this.setState({ userListFiltered: userList });
     }
+
+
 
     render() {
 
         return (
             <div className="c_user-info">
                 <UserItemList
-                    userList = {this.state.userList}
+                    userList = {this.state.userListFiltered}
                     selected = {this.state.selected}
                     handleChangeUserSearch = {this.handleChangeUserSearch}
                     updateSelected = {this.updateSelected}
