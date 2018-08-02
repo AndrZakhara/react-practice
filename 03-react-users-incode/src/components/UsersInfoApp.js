@@ -11,10 +11,17 @@ const dataWithId = Data.map((obj) => {
     return obj;
 });
 
+
 export default class UsersInfoApp extends Component {
+    constructor(props) {
+        super(props);
+        this.handleChangeUserSearch = this.handleChangeUserSearch.bind(this);
+    };
+
     state = {
         userList: dataWithId,
-        selected: dataWithId[0].id
+        selected: dataWithId[0].id,
+        search: ''
     };
 
     updateSelected = (value) => {
@@ -27,9 +34,21 @@ export default class UsersInfoApp extends Component {
         return selectedUser[0];
     };
 
+
     handleChangeUserSearch(evt) {
-        console.log(evt.target.value);
+
+        let changeInputPromise = new Promise((resolve) => {
+            resolve(this.setState({search: evt.target.value}));
+        });
+
+        changeInputPromise.then(()=>{
+            this.searchForm();
+        });
     };
+
+    searchForm() {
+        console.log(this.state.search);
+    }
 
     render() {
 
