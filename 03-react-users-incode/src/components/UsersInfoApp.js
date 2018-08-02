@@ -27,6 +27,10 @@ export default class UsersInfoApp extends Component {
         return selectedUser[0];
     };
 
+    handleChangeUserSearch(evt) {
+        console.log(evt.target.value);
+    };
+
     render() {
 
         return (
@@ -34,7 +38,7 @@ export default class UsersInfoApp extends Component {
                 <UserItemList
                     userList = {this.state.userList}
                     selected = {this.state.selected}
-                    // setSelected = {this.setSelected}
+                    handleChangeUserSearch = {this.handleChangeUserSearch}
                     updateSelected = {this.updateSelected}
                 />
                 <SelectedUserInfo

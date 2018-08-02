@@ -9,11 +9,14 @@ export default class UserItemList extends Component {
         return this.props.selected === id ? true : false;
     };
 
+
     render() {
 
         return (
             <div className="c_user-info__user-item-list">
-                <UserSearch />
+                <UserSearch
+                    handleChangeUserSearch={this.props.handleChangeUserSearch}
+                />
                 {this.props.userList.map((userInfo) => (
                     <UserItem
                         userInfo={userInfo}
