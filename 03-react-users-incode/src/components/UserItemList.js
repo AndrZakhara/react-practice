@@ -9,7 +9,6 @@ export default class UserItemList extends Component {
         return this.props.selected === id ? true : false;
     };
 
-
     render() {
 
         return (

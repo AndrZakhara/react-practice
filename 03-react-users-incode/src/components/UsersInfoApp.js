@@ -25,6 +25,31 @@ export default class UsersInfoApp extends Component {
         search: ''
     };
 
+    userNotFound = [
+        {
+            "id": "0000-0000-0000-0000",
+            "general": {
+                "firstName": "User not found, try again please",
+                "lastName": "",
+                "avatar": "https://www.bidorbuy.co.za/images/ui/bob_no_tradeimage-b.png"
+            },
+            "job": {
+                "company": "",
+                "title": ""
+            },
+            "contact": {
+                "email": "mail@mail.mail",
+                "phone": "-"
+            },
+            "address": {
+                "street": "",
+                "city": "",
+                "zipCode": "",
+                "country": ""
+            }
+        }
+    ];
+
     updateSelected = (value) => {
         this.setState({ selected: value });
     };
@@ -78,11 +103,19 @@ export default class UsersInfoApp extends Component {
 
         console.log(userList);
 
-        this.setState({ selected: userList[0].id });
-        this.setState({ userListFiltered: userList });
+        if(userList.length === 0) {
+            console.log(this.userNotFound[0].id);
+            this.setState({
+                selected: this.userNotFound[0].id,
+                userListFiltered: this.userNotFound
+            });
+        } else {
+            this.setState({
+                selected: userList[0].id,
+                userListFiltered: userList
+            });
+        }
     }
-
-
 
     render() {
 
@@ -95,7 +128,7 @@ export default class UsersInfoApp extends Component {
                     updateSelected = {this.updateSelected}
                 />
                 <SelectedUserInfo
-                    selectedUserData = {this.selectedUserData(this.state.userList, this.state.selected)}
+                    selectedUserData = {this.selectedUserData(this.state.userListFiltered, this.state.selected)}
                 />
             </div>
         )
