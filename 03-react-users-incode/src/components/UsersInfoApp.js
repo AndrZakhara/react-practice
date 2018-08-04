@@ -115,10 +115,7 @@ export default class UsersInfoApp extends Component {
 
         }));
 
-        console.log(userList);
-
         if(userList.length === 0) {
-            console.log(this.userNotFound[0].id);
             this.setState({
                 selected: this.userNotFound[0].id,
                 userListFiltered: this.userNotFound

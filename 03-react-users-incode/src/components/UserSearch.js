@@ -15,7 +15,6 @@ function UserSearch ({ defaultSearch, handleChangeUserSearch, handleClearBtnUser
                     type="text"
                     placeholder="Enter User name..."
                     value={defaultSearch}
-
                     onChange={e => handleChangeUserSearch(e)}
                     onKeyDown={e => handleSubmitEnter(e)}
                 />
