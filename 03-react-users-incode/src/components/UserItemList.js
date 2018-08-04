@@ -14,14 +14,16 @@ export default class UserItemList extends Component {
         return (
             <div className="c_user-info__user-item-list">
                 <UserSearch
-                    handleChangeUserSearch={this.props.handleChangeUserSearch}
+                    defaultSearch = {this.props.defaultSearch}
+                    handleChangeUserSearch = {this.props.handleChangeUserSearch}
+                    handleClearBtnUserListSearch = {this.props.handleClearBtnUserListSearch}
                 />
                 {this.props.userList.map((userInfo) => (
                     <UserItem
-                        userInfo={userInfo}
-                        key={userInfo.id}
-                        selected={this.setSelected(userInfo.id)}
-                        updateSelected={this.props.updateSelected}
+                        userInfo = {userInfo}
+                        key = {userInfo.id}
+                        selected = {this.setSelected(userInfo.id)}
+                        updateSelected = {this.props.updateSelected}
                     />)
                 )}
             </div>

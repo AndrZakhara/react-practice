@@ -16,13 +16,14 @@ export default class UsersInfoApp extends Component {
     constructor(props) {
         super(props);
         this.handleChangeUserSearch = this.handleChangeUserSearch.bind(this);
+        this.handleClearBtnUserListSearch = this.handleClearBtnUserListSearch.bind(this);
     };
 
     state = {
         userList: dataWithId,
         userListFiltered: dataWithId,
         selected: dataWithId[0].id,
-        search: ''
+        defaultSearch: ''
     };
 
     userNotFound = [
@@ -34,21 +35,32 @@ export default class UsersInfoApp extends Component {
                 "avatar": "https://www.bidorbuy.co.za/images/ui/bob_no_tradeimage-b.png"
             },
             "job": {
-                "company": "",
+                "company": "company",
                 "title": ""
             },
             "contact": {
                 "email": "mail@mail.mail",
-                "phone": "-"
+                "phone": ""
             },
             "address": {
-                "street": "",
+                "street": "street",
                 "city": "",
                 "zipCode": "",
                 "country": ""
             }
         }
     ];
+
+    handleClearBtnUserListSearch(e) {
+        this.setState(
+            {
+                userListFiltered: dataWithId,
+                selected: dataWithId[0].id,
+                defaultSearch: ''
+            }
+        )
+
+    }
 
     updateSelected = (value) => {
         this.setState({ selected: value });
@@ -70,6 +82,8 @@ export default class UsersInfoApp extends Component {
         changeInputPromise.then((value)=>{
             this.filterUserList(value)
         });
+        this.setState({defaultSearch: e.target.value})
+
     };
 
     filterUserList(value) {
@@ -125,7 +139,9 @@ export default class UsersInfoApp extends Component {
                     userList = {this.state.userListFiltered}
                     selected = {this.state.selected}
                     handleChangeUserSearch = {this.handleChangeUserSearch}
+                    handleClearBtnUserListSearch = {this.handleClearBtnUserListSearch}
                     updateSelected = {this.updateSelected}
+                    defaultSearch = {this.state.defaultSearch}
                 />
                 <SelectedUserInfo
                     selectedUserData = {this.selectedUserData(this.state.userListFiltered, this.state.selected)}
