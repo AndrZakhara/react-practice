@@ -8,7 +8,7 @@ function UserSearch ({ defaultSearch, handleChangeUserSearch, handleClearBtnUser
             e.preventDefault();
         }
     }
-    console.log(defaultSearch);
+
     return (
             <form className="c_user-info__user-search">
                 <input
