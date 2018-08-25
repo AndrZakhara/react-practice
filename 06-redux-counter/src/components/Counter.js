@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Counter(props) {
-    const { value = 0, onIncrement, onDecrement } = props;
+    const { value, onIncrement, onDecrement } = props;
     return(
             <div>
                 <p>

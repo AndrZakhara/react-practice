@@ -4,7 +4,7 @@ import { createStore } from 'redux'
 import Counter from './components/Counter';
 import counter from './reducers';
 
-const store = createStore(counter);
+const store = createStore(counter, 0);
 const rootEll = document.getElementById('root');
 
 const render =  () => ReactDOM.render(
@@ -15,7 +15,6 @@ const render =  () => ReactDOM.render(
     />,
     rootEll
 );
-
 
 render();
 store.subscribe(render);

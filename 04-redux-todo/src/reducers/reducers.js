@@ -4,7 +4,7 @@ import {
     TOGGLE_TODO,
     SET_VISIBILITY_FILTER,
     VisibilityFilters
-} from './actions'
+} from './../actions/actions'
 
  const initialState = {
      visibilityFilter: VisibilityFilters.SHOW_ALL,
