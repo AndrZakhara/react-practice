@@ -31,7 +31,7 @@ This requires the least amount of work on the reducer side, but does require tha
 If we have a nested tree of slice reducers, each slice reducer will need to know how to respond to this action appropriately.  We will need to include all the relevant data in the action.  We need to update the correct Post object with the comment's ID, create a new Comment object using that ID as a key, and include the Comment's ID in the list of all Comment IDs.  Here's how the pieces for this might fit together:
 
 ```js
-// actions.js
+// index.js
 function addComment(postId, commentText) {
     // Generate a unique ID for this comment
     const commentId = generateId("comment");

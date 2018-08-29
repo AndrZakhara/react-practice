@@ -21,7 +21,7 @@ render(
 
 ## Action Creators and Constants
 
-#### `actions.js`
+#### `index.js`
 
 ```js
 import fetch from 'cross-fetch'
@@ -92,7 +92,7 @@ export function fetchPostsIfNeeded(subreddit) {
 
 ## Reducers
 
-#### `reducers.js`
+#### `index.js`
 
 ```js
 import { combineReducers } from 'redux'

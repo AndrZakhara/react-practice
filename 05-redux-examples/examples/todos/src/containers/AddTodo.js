@@ -10,7 +10,7 @@ const AddTodo = ({ dispatch }) => {
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
-          return
+          return console.log('clik')
         }
         dispatch(addTodo(input.value))
         input.value = ''

@@ -384,7 +384,7 @@ All [`combineReducers()`](../api/combineReducers.md) does is generate a function
 
 ## Source Code
 
-#### `reducers.js`
+#### `index.js`
 
 ```js
 import { combineReducers } from 'redux'

@@ -106,7 +106,7 @@ Action creators can also be asynchronous and have side-effects. You can read abo
 
 ## Source Code
 
-### `actions.js`
+### `index.js`
 
 ```js
 /*

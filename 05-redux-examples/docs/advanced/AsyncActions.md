@@ -47,7 +47,7 @@ We'll use separate types in this tutorial.
 
 Let's start by defining the several synchronous action types and action creators we need in our example app. Here, the user can select a subreddit to display:
 
-#### `actions.js` (Synchronous)
+#### `index.js` (Synchronous)
 
 ```js
 export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
@@ -210,7 +210,7 @@ Before going into the details of dispatching actions together with network reque
 
 > Here, we assume that you understand reducer composition with [`combineReducers()`](../api/combineReducers.md), as described in the [Splitting Reducers](../basics/Reducers.md#splitting-reducers) section on the [basics guide](../basics/README.md). If you don't, please [read it first](../basics/Reducers.md#splitting-reducers).
 
-#### `reducers.js`
+#### `index.js`
 
 ```js
 import { combineReducers } from 'redux'
@@ -307,9 +307,9 @@ Finally, how do we use the synchronous action creators we [defined earlier](#syn
 
 When an action creator returns a function, that function will get executed by the Redux Thunk middleware. This function doesn't need to be pure; it is thus allowed to have side effects, including executing asynchronous API calls. The function can also dispatch actions—like those synchronous actions we defined earlier.
 
-We can still define these special thunk action creators inside our `actions.js` file:
+We can still define these special thunk action creators inside our `index.js` file:
 
-#### `actions.js` (Asynchronous)
+#### `index.js` (Asynchronous)
 
 ```js
 import fetch from 'cross-fetch'
@@ -427,7 +427,7 @@ store
 
 The nice thing about thunks is that they can dispatch results of each other:
 
-#### `actions.js` (with `fetch`)
+#### `index.js` (with `fetch`)
 
 ```js
 import fetch from 'cross-fetch'

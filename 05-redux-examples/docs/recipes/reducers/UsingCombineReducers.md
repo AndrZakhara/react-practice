@@ -25,7 +25,7 @@ There are two ways to define the initial shape and contents of your store's stat
 Here's an example of how use of ES6 object literal shorthand with `combineReducers` can define the state shape:
 
 ```js
-// reducers.js
+// index.js
 export default theDefaultReducer = (state = 0, action) => state;
 
 export const firstNamedReducer = (state = 1, action) => state;
