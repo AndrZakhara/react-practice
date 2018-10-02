@@ -1,5 +1,5 @@
 export const initialState = {
-    user: unknownUser,
+    user: 'unknown User',
 }
 
 export function rootReducer (state = initialState) {
